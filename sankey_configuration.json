@@ -1,0 +1,328 @@
+{
+    "nodes": [
+        {
+            "source": "coal_mine",
+            "label": "Coal Mine",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "scrap_trader",
+            "label": "Scrap Metal Trader",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "steel_factory",
+            "label": "Steel Factory",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "solar_plant",
+            "label": "Solar Power Plant",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "raw_oil",
+            "label": "Oil Rig",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "oil_refinery",
+            "label": "Oil Refinery",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "noble_metal_s",
+            "label": "Noble Metal Mine (silver)",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "noble_metal_p",
+            "label": "Noble Metal Mine (plat)",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "silicon_mine",
+            "label": "Silicon Mine",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "plastic",
+            "label": "Plastic Manufacturer",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "zinc_mine",
+            "label": "Zinc Mine",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "transformator_factory",
+            "label": "Transformator Factory",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "steel_tube",
+            "label": "Steel Tube Factory",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "gas_collector",
+            "label": "Gas Collector",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "conductor_factory",
+            "label": "Conductor Factory",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "copper_mine",
+            "label": "Copper Mine",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "energy_container",
+            "label": "Energy Container Factory",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "energy_tube",
+            "label": "Energy Tube Factory",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "electro_magnet",
+            "label": "Electro Magnet Factory",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "electro_magnet_charge",
+            "label": "Electro Magnetic Charge Factory",
+            "color": "rgba(31, 119, 180, .08)"
+        },
+        {
+            "source": "aluminum_mine",
+            "label": "Aluminum Mine",
+            "color": "rgba(31, 119, 180, .08)"
+        }
+    ],
+    "link": [
+        {
+            "source": "coal_mine",
+            "target": "steel_factory",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": "Coal"
+        },
+        {
+            "source": "scrap_trader",
+            "target": "steel_factory",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": "Scrap Metal"
+        },
+        {
+            "source": "raw_oil",
+            "target": "oil_refinery",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": "Raw Oil"
+        },
+        {
+            "source": "oil_refinery",
+            "target": "plastic",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": "Oil"
+        },
+        {
+            "source": "transformator_factory",
+            "target": "electro_magnet_charge",
+            "value": 1.5,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": "Transformator"
+        },
+        {
+            "source": "energy_tube",
+            "target": "electro_magnet_charge",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": "Energy Tube"
+        },
+        {
+            "source": "energy_container",
+            "target": "electro_magnet_charge",
+            "value": 2,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": "Energy Container"
+        },
+        {
+            "source": "solar_plant",
+            "target": "energy_container",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "transformator_factory",
+            "target": "energy_container",
+            "value": 1.5,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "silicon_mine",
+            "target": "transformator_factory",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "noble_metal_s",
+            "target": "transformator_factory",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": "silver"
+        },
+        {
+            "source": "solar_plant",
+            "target": "transformator_factory",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "steel_factory",
+            "target": "transformator_factory",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "plastic",
+            "target": "transformator_factory",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "aluminum_mine",
+            "target": "steel_tube",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "steel_factory",
+            "target": "steel_tube",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "steel_factory",
+            "target": "conductor_factory",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "zinc_mine",
+            "target": "conductor_factory",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "conductor_factory",
+            "target": "electro_magnet",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "solar_plant",
+            "target": "energy_tube",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "copper_mine",
+            "target": "electro_magnet",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "solar_plant",
+            "target": "conductor_factory",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "solar_plant",
+            "target": "plastic",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "steel_tube",
+            "target": "energy_tube",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "gas_collector",
+            "target": "energy_tube",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "plastic",
+            "target": "energy_tube",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "noble_metal_p",
+            "target": "energy_tube",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "steel_factory",
+            "target": "energy_tube",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "electro_magnet",
+            "target": "electro_magnet_charge",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "noble_metal_p",
+            "target": "conductor_factory",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        },
+        {
+            "source": "",
+            "target": "",
+            "value": 1,
+            "color": "rgba(31, 119, 180, .08)",
+            "label": ""
+        }
+    ]
+}
