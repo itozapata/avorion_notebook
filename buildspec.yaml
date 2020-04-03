@@ -1,0 +1,20 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - $(aws ecr get-login)
+      - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
+  build:
+    commands:
+      - docker build --tag "${REPOSITORY_URI}:${TAG}" --tag "${REPOSITORY_URI}:latest" .
+  post_build:
+    commands:
+      - docker push "${REPOSITORY_URI}:${TAG}"
+      - docker push "${REPOSITORY_URI}:latest"
+      - printf '{"tag":"%s"}' $TAG > build.json
+artifacts:
+  type: zip
+  files:
+    - build.json
+    - ./aws/service-dedicated-alb.yaml
+  discard-paths: yes
