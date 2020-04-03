@@ -116,7 +116,6 @@ Parameters:
   LoadBalancerCertificateArn:
     Description: 'Optional Amazon Resource Name (ARN) of the certificate to associate with the load balancer. If set, HTTP requests are redirected to HTTPS.'
     Type: String
-    Default: ''
   LoadBalancerIdleTimeout:
     Description: 'The idle timeout value, in seconds.'
     Type: Number
@@ -452,22 +451,22 @@ Resources:
       Dimensions:
       - Name: LoadBalancer
         Value: !GetAtt 'LoadBalancer.LoadBalancerFullName'
-#  HttpListener:
-#    Type: 'AWS::ElasticLoadBalancingV2::Listener'
-#    Properties:
-#      DefaultActions:
-#      - !If
-#        - HasLoadBalancerCertificateArn
-#        - RedirectConfig:
-#            Port: '443'
-#            Protocol: HTTPS
-#            StatusCode: 'HTTP_301'
-#          Type: redirect
-#        - TargetGroupArn: !Ref TargetGroup
-#          Type: forward
-#      LoadBalancerArn: !Ref LoadBalancer
-#      Port: 80
-#      Protocol: TCP
+  HttpListener:
+     Type: 'AWS::ElasticLoadBalancingV2::Listener'
+    Properties:
+     DefaultActions:
+     - !If
+       - HasLoadBalancerCertificateArn
+       - RedirectConfig:
+           Port: '443'
+           Protocol: HTTPS
+           StatusCode: 'HTTP_301'
+         Type: redirect
+       - TargetGroupArn: !Ref TargetGroup
+         Type: forward
+     LoadBalancerArn: !Ref LoadBalancer
+     Port: 80
+     Protocol: TCP
   HttpsListener:
     Condition: HasLoadBalancerCertificateArn
     Type: 'AWS::ElasticLoadBalancingV2::Listener'
