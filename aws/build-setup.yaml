@@ -4,11 +4,11 @@ Parameters:
   GitHubOwner:
     Description: Name of organization for the repo (e.x. actionably)
     Type: String
-    Default: actionably
+    Default: itozapata
   GitHubRepo:
     Description: Name of the github repo (e.x. escalation)
     Type: String
-    Default: escalation
+    Default: avorion_notebook
   GitHubBranch:
     Description: branch to build
     Type: String
@@ -27,9 +27,11 @@ Parameters:
   ParentVPCStack:
     Description: 'Stack name of parent VPC stack based on vpc/vpc-*azs.yaml template.'
     Type: String
+    Default: ecs-cluster
   ParentClusterStack:
     Description: 'Stack name of parent Cluster stack based on ecs/cluster.yaml template.'
     Type: String
+    Default: vpc-default
 Resources:
   Repository:
     Type: AWS::ECR::Repository
@@ -168,6 +170,7 @@ Resources:
               Fn::Sub:
                 '{
                     "AppTag": { "Fn::GetParam" : [ "PostBuildOutput", "build.json", "tag" ] }
+                    "AppImage": { "Fn::GetParam" : [ "PostBuildOutput", "build.json", "repository_uri" ] }
                 }'
           OutputArtifacts: []
       - Name: Approval
