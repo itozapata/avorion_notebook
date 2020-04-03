@@ -2,11 +2,11 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: audienceslicer build system and dependencies only has the repository for now no codepipeline
 Parameters:
   GitHubOwner:
-    Description: Name of organization for the repo (e.x. actionably)
+    Description: Name of organization for the repo
     Type: String
     Default: itozapata
   GitHubRepo:
-    Description: Name of the github repo (e.x. escalation)
+    Description: Name of the github repo
     Type: String
     Default: avorion_notebook
   GitHubBranch:
@@ -173,17 +173,17 @@ Resources:
                     "AppImage": { "Fn::GetParam" : [ "PostBuildOutput", "build.json", "repository_uri" ] }
                 }'
           OutputArtifacts: []
-      - Name: Approval
-        Actions:
-        - Name: Approval
-          ActionTypeId:
-            Category: Approval
-            Owner: AWS
-            Version: '1'
-            Provider: Manual
-          InputArtifacts: []
-          OutputArtifacts: []
-          Configuration: {}
+#       - Name: Approval
+#         Actions:
+#         - Name: Approval
+#           ActionTypeId:
+#             Category: Approval
+#             Owner: AWS
+#             Version: '1'
+#             Provider: Manual
+#           InputArtifacts: []
+#           OutputArtifacts: []
+#           Configuration: {}
       - Name: Deploy-Production
         Actions:
         - Name: deploy-cloud-formation
