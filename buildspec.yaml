@@ -11,10 +11,12 @@ phases:
     commands:
       - docker push "${REPOSITORY_URI}:${TAG}"
       - docker push "${REPOSITORY_URI}:latest"
-      - printf '{"tag":"%s","repository_uri":"%s"}' $TAG $REPOSITORY_URI > build.json
+      - printf '{"tag":"%s"}' $TAG > build.json
+      - printf '{"AppImage":"%s"}' $REPOSITORY_URI:$TAG > appimage.json
 artifacts:
   type: zip
   files:
     - build.json
+    - appimage.json
     - ./aws/service-dedicated-alb.yaml
   discard-paths: yes
