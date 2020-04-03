@@ -169,7 +169,7 @@ Resources:
             ParameterOverrides:
               Fn::Sub:
                 '{
-                    "AppTag": { "Fn::GetParam" : [ "PostBuildOutput", "build.json", "tag" ] }
+                    "Image": { "Fn::GetParam" : [ "PostBuildOutput", "appimage.json", "AppImage" ] }
                 }'
           OutputArtifacts: []
 #       - Name: Approval

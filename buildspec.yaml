@@ -4,6 +4,7 @@ phases:
     commands:
       - $(aws ecr get-login)
       - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
+      - docker pull ${REPOSITORY_URI}:latest
   build:
     commands:
       - docker build --tag "${REPOSITORY_URI}:${TAG}" --tag "${REPOSITORY_URI}:latest" .
