@@ -171,7 +171,7 @@ Parameters:
   AppImage:
     Description: 'The Docker image to use for the app container. You can use images in the Docker Hub registry or specify other repositories (repository-url/image:tag).'
     Type: String
-    Default: 
+    Default: '166391258436.dkr.ecr.us-west-1.amazonaws.com/avorion-notebook'
   AppTag:
     Description: the docker tag to use for that image
     Type: String
@@ -189,7 +189,7 @@ Parameters:
   SubDomainName:
     Description: 'Name that is used to create the DNS entry'
     Type: String
-    Default: ''
+    Default: 'avorion'
   Cpu:
     Description: 'The minimum number of vCPUs to reserve for the container.'
     Type: String
