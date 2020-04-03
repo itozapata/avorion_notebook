@@ -46,7 +46,7 @@ for ln in configuration['link']:
         link['value'].append(ln['value'])
         link['color'].append(ln['color'])
         link['label'].append(ln['label'] if 'label' in ln else '')
-    
+
 data = {
     "data": [{
         "type": "sankey",
@@ -85,9 +85,9 @@ fig = go.Figure(data=[go.Sankey(
 fig.update_layout(title_text="Factory Chain: Electro Magnetic Charge Factory", font_size=10)
 
 app.layout = html.Div(children=[
-    
+
     dcc.Graph(figure=fig)
 ])
 
 if __name__ == '__main__':
-    app.run_server(debug=False, host='0.0.0.0')
+    app.run_server(debug=False, host='0.0.0.0', port="80")

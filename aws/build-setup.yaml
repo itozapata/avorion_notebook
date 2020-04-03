@@ -169,7 +169,9 @@ Resources:
             ParameterOverrides:
               Fn::Sub:
                 '{
-                    "Image": { "Fn::GetParam" : [ "PostBuildOutput", "appimage.json", "AppImage" ] }
+                    "Image": { "Fn::GetParam" : [ "PostBuildOutput", "appimage.json", "AppImage" ] },
+                    "DesiredCount": "1",
+                    "MinCapacity": "1"
                 }'
           OutputArtifacts: []
 #       - Name: Approval
