@@ -11,7 +11,7 @@ phases:
     commands:
       - docker push "${REPOSITORY_URI}:${TAG}"
       - docker push "${REPOSITORY_URI}:latest"
-      - printf '{"tag":"%s", "repository_uri": "%s"}' $TAG $REPOSITORY_URI > build.json
+      - printf '{"tag":"%s","repository_uri":"%s"}' $TAG $REPOSITORY_URI > build.json
 artifacts:
   type: zip
   files:
