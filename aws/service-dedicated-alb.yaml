@@ -189,7 +189,7 @@ Parameters:
   SubDomainName:
     Description: 'Name that is used to create the DNS entry'
     Type: String
-    Default: 'escalation2-8-0'
+    Default: ''
   Cpu:
     Description: 'The minimum number of vCPUs to reserve for the container.'
     Type: String
@@ -584,38 +584,6 @@ Resources:
                 Resource:
                   - arn:aws:logs:*:*:*
                   - arn:aws:s3:::*
-        - PolicyName: s3ReportBucketAccess
-          PolicyDocument:
-            Version: '2012-10-17'
-            Statement:
-              - Effect: Allow
-                Action:
-                  - s3:Get*
-                  - s3:List*
-                  - kms:Decrypt
-                Resource:
-                  - !Sub 'arn:aws:s3:::${ReportS3Bucket}'
-                  - !Sub 'arn:aws:s3:::${ReportS3Bucket}/*'
-                  - arn:aws:kms:us-east-1:849584691730:key/c729e161-9f84-4b06-a19f-a523a136a716
-        - PolicyName: s3SegmentBucketAccess
-          PolicyDocument:
-            Version: '2012-10-17'
-            Statement:
-              - Effect: Allow
-                Action:
-                  - s3:Get*
-                  - s3:List*
-                Resource:
-                  - !Sub 'arn:aws:s3:::${SegmentS3Bucket}'
-                  - !Sub 'arn:aws:s3:::${SegmentS3Bucket}/*'
-        - PolicyName: dynamoAccess
-          PolicyDocument:
-            Version: '2012-10-17'
-            Statement:
-              - Effect: Allow
-                Action:
-                  - dynamodb:*
-                Resource: "*"
 
   TaskDefinition:
     Type: 'AWS::ECS::TaskDefinition'

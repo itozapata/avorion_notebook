@@ -169,8 +169,9 @@ Resources:
             ParameterOverrides:
               Fn::Sub:
                 '{
-                    "AppTag": { "Fn::GetParam" : [ "PostBuildOutput", "build.json", "tag" ] }
-                    "AppImage": { "Fn::GetParam" : [ "PostBuildOutput", "build.json", "repository_uri" ] }
+                    "AppTag": { "Fn::GetParam" : [ "PostBuildOutput", "build.json", "tag" ] },
+                    "AppImage": { "Fn::GetParam" : [ "PostBuildOutput", "build.json", "repository_uri" ] },
+                    "SubDomainName": "avorion"
                 }'
           OutputArtifacts: []
 #       - Name: Approval
