@@ -9,6 +9,6 @@ run pip install dash==1.10.0
 COPY . /usr/app
 WORKDIR /usr/app
 
-EXPOSE 8050
+EXPOSE 80
 
 CMD python server.py

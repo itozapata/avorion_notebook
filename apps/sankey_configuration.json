@@ -318,8 +318,8 @@
             "label": ""
         },
         {
-            "source": "",
-            "target": "",
+            "source": "steel_factory",
+            "target": "electro_magnet",
             "value": 1,
             "color": "rgba(31, 119, 180, .08)",
             "label": ""
